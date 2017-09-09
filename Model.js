@@ -10,8 +10,9 @@ var tree = {
     id: hash,
     createTime,
     items:[{
-        pageId: hash,
-        pageName: 'name'
+        id: hash,
+        name: 'name',
+        type: 'page|tree'
     }]
 }
 
