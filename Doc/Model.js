@@ -28,7 +28,23 @@ var commit = {
 var project = {
     refs: [{
         id: hash,
-        commitId: hash
+        commitId: hash,
+        name: 'name'
     }],
-    head: hash
+    head: hash,
+    test: hash,
+    name: '项目名称',
+    rootPath: '访问的根路径',
+    staged: [{
+        committer: String,
+        wsId: String,
+    }], // 暂存的修改区
+}
+
+var workspace = {
+    id: String,
+    projectName: '',
+    refId: '',
+    pages: [],
+    type: 'head:test:normal'
 }

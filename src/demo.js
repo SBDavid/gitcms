@@ -1,8 +1,38 @@
-var projectModel = require('./persistence/schema/project');
+/* var projectModel = require('./persistence/schema/project');
 
-var project1 = new projectModel({ name: 'Silence' });
+var project1 = new projectModel({
+    name: 'projectNname',
+    rootPath: 'rootPath'
+});
 
-projectModel.find({ name: /^tangjiawei/ }, function (err, p) {
-    if (err) return console.error(err);
-    console.info('save', p);
-  });
+project1.save(function(err){
+    if (err) {
+        console.info(err);
+    }
+    else {
+        console.info('ok')
+    }
+}) */
+
+var projectApi = require('./persistence/api/project');
+
+/* projectApi.insert({
+    name: 'test',
+    rootPath: 'root'
+}, function(err, project){
+    if(err) {
+        console.error(err);
+    }
+    else {
+        console.info(project);
+    }
+}); */
+
+projectApi.find('test', function(err, project){
+    if(err) {
+        console.error(err);
+    }
+    else {
+        console.info(project);
+    }
+});
