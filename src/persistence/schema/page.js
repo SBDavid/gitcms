@@ -1,5 +1,15 @@
 var mongoose = require('../connection');
 
-module.exports = mongoose.Schema({
-    
-})
+var pageSchema = mongoose.Schema({
+    id: {
+        type: String,
+        required: true
+    },
+    createTime: {
+        type: Date,
+        default: Date.now
+    },
+    content: {}
+});
+
+module.exports = mongoose.model('page', pageSchema);

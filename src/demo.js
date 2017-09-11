@@ -14,9 +14,11 @@ project1.save(function(err){
     }
 }) */
 
-var projectApi = require('./persistence/api/project');
+/* project */
 
-/* projectApi.insert({
+/* var projectApi = require('./persistence/api/project');
+
+projectApi.insert({
     name: 'test',
     rootPath: 'root'
 }, function(err, project){
@@ -26,9 +28,24 @@ var projectApi = require('./persistence/api/project');
     else {
         console.info(project);
     }
-}); */
+});
 
 projectApi.find('test', function(err, project){
+    if(err) {
+        console.error(err);
+    }
+    else {
+        console.info(project);
+    }
+}); */
+
+var pageApi = require('./persistence/api/page');
+
+pageApi.insert({
+    content: {
+        test: 'hai'
+    }
+}, function(err, project){
     if(err) {
         console.error(err);
     }

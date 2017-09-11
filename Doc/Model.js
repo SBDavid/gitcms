@@ -12,6 +12,7 @@ var tree = {
     items:[{
         id: hash,
         name: 'name',
+        path: '', // url路径
         type: 'page|tree'
     }]
 }
