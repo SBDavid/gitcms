@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/SBDavid/gitcms#readme",
   "dependencies": {
-    "mongoose": "^4.11.10"
+    "mongoose": "^4.11.10",
+    "node-sha1": "^1.0.1"
   }
 }
