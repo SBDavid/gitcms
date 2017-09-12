@@ -28,7 +28,6 @@ var commit = {
 
 var project = {
     refs: [{
-        id: hash,
         commitId: hash,
         name: 'name'
     }],
@@ -45,7 +44,7 @@ var project = {
 var workspace = {
     id: String,
     projectName: '',
-    refId: '',
+    refName: '',
     pages: [],
     type: 'head:test:normal'
 }

@@ -1,7 +1,10 @@
 var mongoose = require('../connection');
 
 var treeSchema = mongoose.Schema({
-    id: String,
+    id: {
+        type: String,
+        required: true
+    },
     createTime: {
         type: Date,
         default: Date.now

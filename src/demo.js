@@ -1,6 +1,9 @@
-/* var projectModel = require('./persistence/schema/project');
+var pageApi = require('./persistence/api/page');
+var projectApi = require('./persistence/api/project');
+var treeApi = require('./persistence/api/tree');
+var commitApi = require('./persistence/api/commit');
 
-var project1 = new projectModel({
+/* var project1 = new projectModel({
     name: 'projectNname',
     rootPath: 'rootPath'
 });
@@ -12,12 +15,11 @@ project1.save(function(err){
     else {
         console.info('ok')
     }
-}) */
+})  */
 
 /* project */
 
-/* var projectApi = require('./persistence/api/project');
-
+/*
 projectApi.insert({
     name: 'test',
     rootPath: 'root'
@@ -39,9 +41,9 @@ projectApi.find('test', function(err, project){
     }
 }); */
 
-var pageApi = require('./persistence/api/page');
+/* 插入page */
 
-pageApi.insert({
+/* pageApi.insert({
     content: {
         test: 'hai'
     }
@@ -52,4 +54,42 @@ pageApi.insert({
     else {
         console.info(project);
     }
-});
+}); */
+
+/* 插入tree */
+
+/* treeApi.insert({
+    id: 'd632e6f53116e8b45ac72bcff4752797daccd9c1',
+    items: [{
+        id: 'd632e6f53116e8b45ac72bcff4752797daccd9cc',
+        name: 'pageName',
+        path: 'pagePath',
+        type: 'page'
+    }]
+},function(err, obj){
+    if(err) {
+        console.error(err);
+    }
+    else {
+        console.info(obj);
+    }
+}) */
+
+/* 插入commit */
+
+commitApi.insert({
+    id: 'd632e6f53116e8b45ac72bcff4752797daccd9c2',
+    treeId: 'd632e6f53116e8b45ac72bcff4752797daccd9c1',
+    committer: {
+        email: 'billl89@126.com',
+        username: 'davidtang'
+    },
+    message: '初次提交'
+},function(err, obj){
+    if(err) {
+        console.error(err);
+    }
+    else {
+        console.info(obj);
+    }
+})

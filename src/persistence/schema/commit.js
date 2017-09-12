@@ -1,15 +1,21 @@
 var mongoose = require('../connection');
 
 var commitSchema = mongoose.Schema({
-    id: String,
+    id: {
+        type: String,
+        required: true
+    },
     parentId: String,
     createTime: {
         type: Date,
         default: Date.now
     },
-    treeId: String,
+    treeId: {
+        type: String,
+        required: true
+    },
     committer: {},
     message: String
 });
 
-module.exports = mongoose.model('tree', commitSchema);
+module.exports = mongoose.model('commit', commitSchema);
