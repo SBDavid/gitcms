@@ -103,7 +103,7 @@ pageApi.find('d632e6f53116e8b45ac72bcff4752797daccd9cc').then(function(obj){
     }
 }) */
 
-var app = require('./app');
+var app = require('./app/app');
 
 (new app()).checkout('demo','master',function(obj){
 /*     for(prop in obj.result){

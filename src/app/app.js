@@ -1,7 +1,7 @@
-var pageApi = require('./persistence/api/page');
-var projectApi = require('./persistence/api/project');
-var treeApi = require('./persistence/api/tree');
-var commitApi = require('./persistence/api/commit');
+var pageApi = require('../persistence/api/page');
+var projectApi = require('../persistence/api/project');
+var treeApi = require('../persistence/api/tree');
+var commitApi = require('../persistence/api/commit');
 
 function app() {  }
 
