@@ -54,7 +54,16 @@ projectApi.find('test', function(err, project){
     else {
         console.info(project);
     }
-}); */
+}); 
+
+pageApi.find('d632e6f53116e8b45ac72bcff4752797daccd9cc').then(function(obj){
+    console.info(1, obj);
+    return pageApi.find('d632e6f53116e8b45ac72bcff4752797daccd9cc');
+}).then(function(obj){
+    console.info(2, obj);
+});
+*/
+
 
 /* 插入tree */
 
@@ -77,7 +86,7 @@ projectApi.find('test', function(err, project){
 
 /* 插入commit */
 
-commitApi.insert({
+/* commitApi.insert({
     id: 'd632e6f53116e8b45ac72bcff4752797daccd9c2',
     treeId: 'd632e6f53116e8b45ac72bcff4752797daccd9c1',
     committer: {
@@ -92,4 +101,14 @@ commitApi.insert({
     else {
         console.info(obj);
     }
+}) */
+
+var app = require('./app');
+
+(new app()).checkout('demo','master',function(obj){
+/*     for(prop in obj.result){
+        console.info(prop)
+    } */
+    /* console.info(obj.result.toObject()) */
+    console.info(obj)
 })

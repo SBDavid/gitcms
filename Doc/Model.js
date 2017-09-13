@@ -42,9 +42,43 @@ var project = {
 }
 
 var workspace = {
-    id: String,
+    useremail: String,
     projectName: '',
     refName: '',
-    pages: [],
-    type: 'head:test:normal'
+    type: 'head:test:normal',
+    commit: {
+        id: hash,
+        parentId: hash,
+        crateTime: 121212,
+        treeId: hash,
+        committer: {},
+        message: 'message',
+        tree: {
+            id: hash,
+            createTime,
+            items:[{
+                id: hash,
+                name: 'name',
+                path: '', // url路径
+                type: 'page',
+                page: {}
+            }, {
+                id: hash,
+                name: 'name',
+                path: '', // url路径
+                type: 'tree',
+                tree: {
+                    id: hash,
+                    createTime,
+                    items:[{
+                        id: hash,
+                        name: 'name',
+                        path: '', // url路径
+                        type: 'page',
+                        page:{}
+                    }]
+                }
+            }]
+        }
+    }
 }

@@ -7,7 +7,7 @@ module.exports = {
         newPageModel.save(callback);
     },
 
-    find: function(pageId, callback) {
-        pageModel.find({ id: pageId }, callback);
+    find: function(pageId) {
+        return pageModel.find({ id: pageId }).exec();
     }
 }

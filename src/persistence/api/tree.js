@@ -7,7 +7,7 @@ module.exports = {
         newTreeModel.save(callback);
     },
     
-    find: function(treeId, callback) {
-        treeModel.find({ id: treeId }, callback);
+    find: function(treeId) {
+        return treeModel.find({ id: treeId }).exec();
     }
 }

@@ -17,9 +17,9 @@ module.exports = {
         newProject.save(callback);
     },
 
-    find: function(projectName, callback) {
-        projectModel.find({
+    find: function(projectName) {
+        return projectModel.find({
             name: projectName
-        }, callback);
+        }).exec();
     }
 }

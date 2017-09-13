@@ -7,7 +7,7 @@ module.exports = {
         newCommitModel.save(callback);
     },
 
-    find: function(commitId, callback) {
-        commitModel.find({ id: commitId }, callback);
+    find: function(commitId) {
+        return commitModel.find({ id: commitId }).exec();
     }
 }
