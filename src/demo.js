@@ -44,8 +44,10 @@ projectApi.find('test', function(err, project){
 /* 插入page */
 
 /* pageApi.insert({
+    
+    id: 'd632e6f53116e8b45ac72bcff4752797daccd9c4',
     content: {
-        test: 'hai'
+        test: 'world'
     }
 }, function(err, project){
     if(err) {
@@ -54,25 +56,27 @@ projectApi.find('test', function(err, project){
     else {
         console.info(project);
     }
-}); 
+});  */
 
-pageApi.find('d632e6f53116e8b45ac72bcff4752797daccd9cc').then(function(obj){
+/* pageApi.find('d632e6f53116e8b45ac72bcff4752797daccd9cc').then(function(obj){
     console.info(1, obj);
     return pageApi.find('d632e6f53116e8b45ac72bcff4752797daccd9cc');
+}, function(err){
+    console.error(err);
 }).then(function(obj){
     console.info(2, obj);
-});
-*/
-
+}).catch(function(err){
+    console.error('catch', err);
+}); */
 
 /* 插入tree */
 
 /* treeApi.insert({
-    id: 'd632e6f53116e8b45ac72bcff4752797daccd9c1',
+    id: 'd632e6f53116e8b45ac72bcff4752797daccd9c5',
     items: [{
-        id: 'd632e6f53116e8b45ac72bcff4752797daccd9cc',
-        name: 'pageName',
-        path: 'pagePath',
+        id: 'd632e6f53116e8b45ac72bcff4752797daccd9c4',
+        name: 'page4',
+        path: 'page4',
         type: 'page'
     }]
 },function(err, obj){
@@ -103,12 +107,13 @@ pageApi.find('d632e6f53116e8b45ac72bcff4752797daccd9cc').then(function(obj){
     }
 }) */
 
-var app = require('./app/app');
+/* var app = require('./app/app');
 
 (new app()).checkout('demo','master',function(obj){
-/*     for(prop in obj.result){
-        console.info(prop)
-    } */
-    /* console.info(obj.result.toObject()) */
     console.info(obj)
-})
+}) */
+
+var innerCommend = require('./app/innerCommend');
+
+var i = new innerCommend();
+i.getFullTree('d632e6f53116e8b45ac72bcff4752797daccd9c1');

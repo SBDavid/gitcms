@@ -61,13 +61,13 @@ var workspace = {
                 name: 'name',
                 path: '', // url路径
                 type: 'page',
-                page: {}
+                item: {}
             }, {
                 id: hash,
                 name: 'name',
                 path: '', // url路径
                 type: 'tree',
-                tree: {
+                item: {
                     id: hash,
                     createTime,
                     items:[{
@@ -75,7 +75,7 @@ var workspace = {
                         name: 'name',
                         path: '', // url路径
                         type: 'page',
-                        page:{}
+                        item:{}
                     }]
                 }
             }]
