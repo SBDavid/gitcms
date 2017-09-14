@@ -11,8 +11,8 @@ innerCommend.prototype.getFullTree = function(treeId, callback) {
 
     function isTreeFullyBuild(tree) {
         return tree.items.filter(item => {
-            return item.item === undefined
-        })
+            return item.item === undefined || Object.getOwnPropertyNames(item.item).length ===0
+        }).length === 0
     }
 
     function getTree(root, treeId, cb) {
@@ -48,23 +48,16 @@ innerCommend.prototype.getFullTree = function(treeId, callback) {
                 root.items[i].item = objs[i];
                 if(root.items[i].type === 'tree') {
                     root.items[i].tree = {};
-                    getTree(root.items[i].tree, root.items[i].id, function)
+                    getTree(root.items[i].tree, root.items[i].id, function() {
+                        if (isTreeFullyBuild(root)) {
+                            cb(root);
+                        }
+                    })
                 }
             }
-            /* if (objs === 'page') {
-                root.page = page;
+            if (isTreeFullyBuild(root)) {
+                cb(root);
             }
-            if (objs === 'tree') {
-                getTree(root.tree, objs.treeId, function() {
-                    if(x) {
-                        cb();
-                    }
-                })
-            }
-
-            if (x) {
-                cb();
-            } */
         })
         .catch(function(error) {
             // 跳出promise链
