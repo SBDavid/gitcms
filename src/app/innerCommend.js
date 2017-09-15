@@ -10,6 +10,7 @@ innerCommend.prototype.getFullTree = function(treeId, callback) {
     var tree = null;
 
     function isTreeFullyBuild(tree) {
+        // console.info('isTreeFullyBuild', tree)
         return tree.items.filter(item => {
             return item.item === undefined || Object.getOwnPropertyNames(item.item).length ===0
         }).length === 0
@@ -47,8 +48,9 @@ innerCommend.prototype.getFullTree = function(treeId, callback) {
             for (let i= 0; i < objs.length; i ++) {
                 root.items[i].item = objs[i];
                 if(root.items[i].type === 'tree') {
-                    root.items[i].tree = {};
-                    getTree(root.items[i].tree, root.items[i].id, function() {
+                    root.items[i].item = {};
+                    getTree(root.items[i].tree, root.items[i].id, function(subTree) {
+                        root.items[i].item = subTree;
                         if (isTreeFullyBuild(root)) {
                             cb(root);
                         }
