@@ -107,15 +107,12 @@ projectApi.find('test', function(err, project){
     }
 }) */
 
-/* var app = require('./app/app');
+var app = require('./app/app');
 
-(new app()).checkout('demo','master',function(obj){
-    console.info(obj)
-}) */
+var a = new app();
 
-var innerCommend = require('./app/innerCommend');
-
-var i = new innerCommend();
-i.getFullTree('d632e6f53116e8b45ac72bcff4752797daccd9c1', function(obj) {
-    console.info(obj)
+a.checkout('demo', 'master', 'billl89@126.com').then(function(response){
+    console.info(response);
+}).catch(err => {
+    console.error(err);
 });

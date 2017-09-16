@@ -9,16 +9,8 @@ var workspaceSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    projectName: {
-        type: String,
-        required: true
-    },
-    type: {
-        type: String,
-        required: true
-    },
     refName: {
-        type: Date,
+        type: String,
         default: Date.now
     },
     commit: {}
